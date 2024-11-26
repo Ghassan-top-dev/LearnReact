@@ -48,12 +48,12 @@ const ShoppingListApp = () => {
         </div>
       </div>
 
-      <div class="findme" id="connect">
+      <footer class="findme" id="connect">
         <h2>Connect With Me!</h2>
           <a href="https://www.linkedin.com/in/ghassan-murad-agha-579a3730b/" target="_blank" rel="noreferrer">
             <button>LinkedIn</button>
           </a>
-        </div>  
+        </footer>  
 
       
     </div>
