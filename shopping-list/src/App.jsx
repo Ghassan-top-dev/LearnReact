@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles.css';
+import './App.css';
 
 const useLocalStorage = (key, initialValue) => {
   const [value, setValue] = useState(() => {
