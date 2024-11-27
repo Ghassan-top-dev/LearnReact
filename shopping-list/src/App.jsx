@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+
+//saves lists and data even when refresh
 const useLocalStorage = (key, initialValue) => {
   const [value, setValue] = useState(() => {
     try {
@@ -18,6 +20,7 @@ const useLocalStorage = (key, initialValue) => {
   return [value, setValue];
 };
 
+//main function
 const ShoppingListApp = () => {
   const [currentPage, setCurrentPage] = useState('landing');
   const [lists, setLists] = useLocalStorage('shopping-lists', []);
@@ -31,6 +34,7 @@ const ShoppingListApp = () => {
     setTimeout(() => setShowAlert(false), 3000);
   };
 
+  //landing page
   const LandingPage = () => (
     <div className="landing-page">
       <div className="landing-content">
@@ -59,6 +63,7 @@ const ShoppingListApp = () => {
     </div>
   );
 
+  // pretty straight forward, this is the create list function
   const CreateList = () => {
     const [items, setItems] = useState([]);
     const [newItem, setNewItem] = useState('');
@@ -83,6 +88,7 @@ const ShoppingListApp = () => {
       }
     };
 
+    // save list
     const saveList = () => {
       if (listName && items.length > 0 && budget) {
         const parsedBudget = parseFloat(budget);
@@ -195,6 +201,7 @@ const ShoppingListApp = () => {
     );
   };
 
+  // viewlists
   const ViewLists = () => {
     const deleteList = (id) => {
       setLists(lists.filter(list => list.id !== id));
@@ -263,6 +270,7 @@ const ShoppingListApp = () => {
     );
   };
 
+  // this is for alerts
   const AlertComponent = () => (
     <div className="alert-container">
       {showAlert && (
